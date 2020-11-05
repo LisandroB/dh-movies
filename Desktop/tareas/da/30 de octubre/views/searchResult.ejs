@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <ul>
+      <%if (typeof result == "undefined") { %>
+        <p>No se encontró nada.</p>
+      <% } else { %>
+        <% result.forEach(movie => { %>
+          <a href="detail/<%= movie.id %>"><%= movie.title %></a>
+        <% }) %>
+        <% }; %>
+      </ul>
+  </body>
+</html>

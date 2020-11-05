@@ -1,9 +1,10 @@
-let {Movie, Genre, Actor, Episode, Migration, Serie, User, Season, sequelize} = require('../database/models')
+let {Movie, sequelize} = require('../database/models')
+const {Op} = require("sequelize");
 let moviesController = {
     all: async function(req, res) {
         try {
             const movies = await Movie.findAll()
-            res.render(await 'index', {movies: movies});
+            res.render('index', {movies: movies});
         } catch (error) {
             console.log(error);
         }
@@ -11,7 +12,7 @@ let moviesController = {
     showGenre: async function(req, res) {
         try {
             const genres = await Genre.findAll()
-            res.render(await 'genres', {genres: genres});
+            res.render('genres', {genres: genres});
 
         } catch(error) {
             console.log(error);
@@ -20,7 +21,7 @@ let moviesController = {
     showActor: async function(req, res) {
         try {
             const actors = await Actor.findAll()
-            res.render(await 'actors', {actors: actors});
+            res.render('actors', {actors: actors});
         } catch(error) {
             console.log(error);
         }
@@ -28,7 +29,7 @@ let moviesController = {
     showEpisode: async function(req, res) {
         try {
             const episodes = await Episode.findAll()
-            res.render(await 'episode', {episodes: episodes})
+            res.render('episode', {episodes: episodes})
         } catch(error) {
             console.log(error);
         }
@@ -36,7 +37,7 @@ let moviesController = {
     showMigration: async function(req, res) {
         try {
             const migrations = await Migration.findAll();
-            res.render(await 'migration', {migrations: migrations});
+            res.render('migration', {migrations: migrations});
         } catch(error) {
             console.log(error);
         }
@@ -44,7 +45,7 @@ let moviesController = {
     showSerie: async function(req, res) {
         try {
             const series = await Serie.findAll();
-            res.render(await 'series', {series: series});
+            res.render('series', {series: series});
         } catch(error) {
             console.log(error);
         }
@@ -52,7 +53,7 @@ let moviesController = {
     showUser: async function(req, res) {
         try {
             const users = await User.findAll();
-            res.render(await 'users', {users: users})
+            res.render('users', {users: users})
         } catch(error) {
             console.log(error);
         }
@@ -60,7 +61,7 @@ let moviesController = {
     showSeason: async function(req, res) {
         try {
             const seasons = await Season.findAll();
-            res.render(await 'seasons', {seasons: seasons})
+            res.render('seasons', {seasons: seasons})
         } catch(error) {
             console.log(error);
         }
@@ -69,7 +70,7 @@ let moviesController = {
         let id = req.params.id
         try {
             const search = await Movie.findByPk(id)
-            res.render(await 'list', {list: search})
+            res.render('list', {list: search})
         } catch(error) {
             console.log(error);
         }
@@ -82,9 +83,37 @@ let moviesController = {
                 ],
                 limit: 5
             })
-            res.render(await 'newMovies', {newMovies: newMovies});
+            res.render('newMovies', {newMovies: newMovies});
         } catch (error) {
             console.log(error);
+        }
+    },
+    showRecommended: async function(req, res) {
+        try {
+            const recommendedMovies = await Movie.findAll({
+                where: {
+                    rating: {[Op.gte]: 8},
+                }
+            })
+            res.render("recommend", {recommend: recommendedMovies});
+        } catch(error) {
+            console.log(error);
+        }
+    },
+    search: function (req, res) {
+        res.render('search');
+    },
+    searchIndex: async function(req, res) {
+        let buscar = req.body.buscar;
+        try {
+            let result = await Movie.findAll({
+                where: {
+                    title: {[Op.like]: '%' + buscar + '%'}, 
+                }
+            })
+            res.render('searchResult', {result: result});
+        } catch(error) {
+            console.log();
         }
     }
 }
