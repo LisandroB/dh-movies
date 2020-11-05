@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <li><% movies.forEach(movie => { %>
+    <ul>
+        <a href="movies/detail/<%= movie.id %>"><%= movie.title %>
+        <% }); %>
+      </ul>
+    </li>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <li><% migrations.forEach(migration => { %>
+    <ul>
+        <%= migration.batch %>
+        <%= migration.migration %>
+        <% }); %>
+      </ul>
+    </li>
+  </body>
+</html>
