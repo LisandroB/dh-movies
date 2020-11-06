@@ -3,6 +3,15 @@
   <head>
   </head>
   <body>
+    <a href="/genres">Géneros</a> <br>
+    <a href="/actors">Actores</a> <br>
+    <a href="/episodes">Episodios</a> <br>
+    <a href="/series">Series</a> <br>
+    <a href="/seasons">Temporadas</a> <br>
+    <a href="/movies/new">Nuevos estrenos</a> <br>
+    <a href="/movies/recommended">Pelis recomendadas</a> <br>
+    <a href="/movies/search">Buscar</a> <br>
+    <a href="/movies/add"> Agregar peliculas</a>
     <li><% movies.forEach(movie => { %>
     <ul>
         <a href="movies/detail/<%= movie.id %>"><%= movie.title %>

@@ -4,7 +4,10 @@
   </head>
   <body>
     <ul>
-        <%= actors.first_name %> <%= actors.last_name %>
+      <a href="/movies">Volver al listado</a> <br>
+        <%actors.forEach(actor => { %>
+          <%= actor.first_name %> <%= actor.last_name %> <br>
+        <% }); %>
       </ul>
   </body>
 </html>

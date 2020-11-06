@@ -1,4 +1,4 @@
-let {Movie, Genre, Episode, Actor, Migration, Season, User, sequelize, db} = require('../database/models')
+let {Movie, Genre, Episode, Actor, Migration, Season, User, Serie, sequelize, db} = require('../database/models')
 const {Op} = require("sequelize");
 let moviesController = {
     all: async function(req, res) {
