@@ -1,4 +1,4 @@
-let {Movie, sequelize} = require('../database/models')
+let {Movie, Genre, Episode, Actor, Migration, Season, User, sequelize, db} = require('../database/models')
 const {Op} = require("sequelize");
 let moviesController = {
     all: async function(req, res) {
@@ -115,6 +115,48 @@ let moviesController = {
         } catch(error) {
             console.log();
         }
+    },
+    add: function(req, res) {
+        res.render('add');
+    },
+    addMovie: function(req, res) {
+        Movie.create({
+            title: req.body.titulo,
+            rating: req.body.rating,
+            awards: req.body.awards,
+            release_date: req.body.release,
+            length: req.body.length
+        });
+        res.redirect('/movies')
+    },
+    edit: function(req, res) {
+        Movie.findByPk(req.params.id)
+            .then(function(pelicula){
+                res.render("edit", {pelicula: pelicula});
+            })
+    },
+    editMovie: function(req, res) {
+        Movie.update({
+            title: req.body.titulo,
+            rating: req.body.rating,
+            awards: req.body.awards,
+            release_date: req.body.release,
+            length: req.body.length
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+
+        res.redirect("/movies/detail/" + req.params.id);
+    },
+    deleteMovie: function(req, res) {
+        Movie.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/movies");
     }
 }
 

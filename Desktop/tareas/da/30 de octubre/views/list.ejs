@@ -4,13 +4,16 @@
   </head>
   <body>
     <ul>
+      <a href="/movies"> Volver al listado.</a> <br>
       <li>Título: <%= list.title %></li>
       <li>Rating: <%= list.rating %></li>
       <li>Premios: <%= list.awards %></li>
       <li>Fecha de lanzamiento: <%= list.release_date %></li>
       <li>Duración: <%= list.length %></li>
       </ul>
-      <button type="submit">BORRAR</button>
-      <button type="submit">MODIFICAR</button>
+      <form action="/movies/delete/<%= list.id %>" method="post">
+        <button type="submit">BORRAR</button>
+      </form>
+      <a href="/movies/edit/<%= list.id %>"><button type="submit">MODIFICAR</button></a>
   </body>
 </html>
