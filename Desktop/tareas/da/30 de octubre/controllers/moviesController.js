@@ -157,6 +157,9 @@ let moviesController = {
             }
         })
         res.redirect("/movies");
+    },
+    redirect: function(req, res) {
+        res.redirect('/movies')
     }
 }
 

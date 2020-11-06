@@ -3,6 +3,7 @@ var router = express.Router();
 let moviesController = require('../controllers/moviesController')
 
 /* GET home page. */
+router.get('/', moviesController.redirect);
 router.get('/movies', moviesController.all)
 router.get('/genres', moviesController.showGenre)
 router.get('/actors', moviesController.showActor)
