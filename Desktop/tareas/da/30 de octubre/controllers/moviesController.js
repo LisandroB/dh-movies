@@ -23,7 +23,8 @@ let moviesController = {
     actuallyShowGenre: async function(req, res) {
         try {
             const specificGenre = await Genre.findByPk(req.params.id)
-            res.render('genre_detail', {specificGenre})
+            const movies = await Movie.findAll({include: ["Genre"]});
+            res.render('genre_detail', {specificGenre, movies})
         } catch(error) {
             console.log(error);
         }
@@ -152,27 +153,28 @@ let moviesController = {
         await newMovie.addActores(req.body.actores);
         res.redirect('/');
     },
-    edit:  function(req, res) {
-        const generos =  Genre.findAll();
-        const actores =  Actor.findAll();  
-        const pelicula =  Movie.findByPk(req.params.id, {
+    edit: async function(req, res) {
+        const movieId = req.params.id;
+        const generos = await Genre.findAll();
+        const actores = await Actor.findAll();  
+        const pelicula = await Movie.findByPk(movieId, {
             include:['Genre', 'actores']
         })
-        res.render("edit", {pelicula: pelicula, generos: generos, actores: actores});
+        res.render('edit', {generos, actores, pelicula})
     },
     editMovie: async function(req, res) {
-        Movie.update({
+        const movieId = req.params.id
+        const changedMovie = await Movie.findByPk(movieId, {include: ['Genre', 'actores']})
+        await changedMovie.removeActores(changedMovie.actores);
+        await changedMovie.addActores(req.body.actores);
+        await changedMovie.update({
             title: req.body.titulo,
             rating: req.body.rating,
             awards: req.body.awards,
             release_date: req.body.release,
-            length: req.body.length
-        }, {
-            where: {
-                id: req.params.id
-            }
-        })
-
+            length: req.body.length,
+            genre_id: req.body.genre_id
+        });
         res.redirect("/movies/detail/" + req.params.id);
     },
     deleteMovie: async function(req, res) {

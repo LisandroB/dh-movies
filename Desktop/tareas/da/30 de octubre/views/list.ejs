@@ -15,7 +15,7 @@
         <a href="/actors/<%=actor.id%>"><%= actor.first_name %> <%= actor.last_name%> <br></a>
       <% });%> </li>
       </ul>
-      <form action="/movies/delete/<%= list.id %>" method="post">
+      <form action="/movies/delete/<%= list.id %>?_method=DELETE" method="post">
         <button type="submit">BORRAR</button>
       </form>
       <a href="/movies/edit/<%= list.id %>"><button type="submit">MODIFICAR</button></a>

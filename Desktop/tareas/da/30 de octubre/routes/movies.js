@@ -10,7 +10,7 @@ router.post('/add', moviesController.addMovie);
 router.post('/search', moviesController.searchIndex);
 router.get('/detail/:id', moviesController.findMovie);
 router.get('/edit/:id', moviesController.edit);
-router.post('/edit/:id', moviesController.editMovie);
-router.post('/delete/:id', moviesController.deleteMovie);
+router.put('/edit/:id', moviesController.editMovie);
+router.delete('/delete/:id', moviesController.deleteMovie);
 
 module.exports = router;

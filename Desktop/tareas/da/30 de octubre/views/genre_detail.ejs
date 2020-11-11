@@ -8,7 +8,14 @@
       <li>Título: <%= specificGenre.name %></li>
       <li>ranking: <%= specificGenre.ranking %></li>
       <li>Activo: <%= specificGenre.active %></li>
+        Pelis de este género en nuestra base de datos: <br>
       <li>
+        <% movies.forEach(movie => { %>
+          <% if (movie.GenreId == specificGenre.id) { %>
+            <a href="/movies/detail/<%= movie.id %>"><%= movie.title %> <br></a>
+          <% } %>
+        <% }); %>
+      </li>
       </li>
   </body>
 </html>
