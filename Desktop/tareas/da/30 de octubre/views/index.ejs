@@ -3,20 +3,24 @@
   <head>
   </head>
   <body>
-    <a href="/genres">Géneros</a> <br>
-    <a href="/actors">Actores</a> <br>
-    <a href="/episodes">Episodios</a> <br>
-    <a href="/series">Series</a> <br>
-    <a href="/seasons">Temporadas</a> <br>
-    <a href="/movies/new">Nuevos estrenos</a> <br>
-    <a href="/movies/recommended">Pelis recomendadas</a> <br>
-    <a href="/movies/search">Buscar</a> <br>
-    <a href="/movies/add"> Agregar peliculas</a>
+    <nav>
+      <li> 
+        <ul><a href="/genres">Géneros</a> <br></ul>
+        <ul><a href="/actors">Actores</a> <br></ul>
+        <ul><a href="/episodes">Episodios</a> <br></ul>
+        <ul><a href="/series">Series</a> <br></ul>
+        <ul><a href="/seasons">Temporadas</a> <br></ul>
+        <ul><a href="/movies/new">Nuevos estrenos</a> <br></ul>
+        <ul><a href="/movies/recommended">Pelis recomendadas</a> <br></ul>
+        <ul><a href="/movies/search">Buscar</a> <br></ul>
+        <ul><a href="/movies/add"> Agregar peliculas</a></ul>
+    </li>
+    </nav>
     <li><% movies.forEach(movie => { %>
-    <ul>
+      <ul>
         <a href="movies/detail/<%= movie.id %>"><%= movie.title %>
-        <% }); %>
       </ul>
+        <% }); %>
     </li>
   </body>
 </html>

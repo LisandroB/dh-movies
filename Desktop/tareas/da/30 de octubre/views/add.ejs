@@ -13,6 +13,16 @@
         Premios: <input type="number" name="awards" id=""> <br>
         Fecha de estreno: <input type="date" name="release" id=""> <br>
         Duración: <input type="number" name="length" id=""> <br>
+        Genero: <select name="genre_id" id="">
+            <% generos.forEach(genero => { %>
+                <option value="<%=genero.id%>"> <%= genero.name %> </option> <br>
+            <% }); %>
+            </select><br>
+            Actores: <select name="actores" id="" multiple>
+                <% actores.forEach(actor => { %>
+                    <option value="<%= actor.id %>"> <%= actor.first_name %> <%= actor.last_name %> </option> <br>
+                <% }); %>
+            </select><br>
         <button type="submit">Submit</button>
 </form>
 </body>

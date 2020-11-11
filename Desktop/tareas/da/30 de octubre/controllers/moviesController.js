@@ -3,7 +3,9 @@ const {Op} = require("sequelize");
 let moviesController = {
     all: async function(req, res) {
         try {
-            const movies = await Movie.findAll()
+            const movies = await Movie.findAll({
+                include: ["Genre", "actores"]
+            })
             res.render('index', {movies: movies});
         } catch (error) {
             console.log(error);
@@ -18,10 +20,26 @@ let moviesController = {
             console.log(error);
         }
     },
+    actuallyShowGenre: async function(req, res) {
+        try {
+            const specificGenre = await Genre.findByPk(req.params.id)
+            res.render('genre_detail', {specificGenre})
+        } catch(error) {
+            console.log(error);
+        }
+    },
     showActor: async function(req, res) {
         try {
             const actors = await Actor.findAll()
             res.render('actors', {actors: actors});
+        } catch(error) {
+            console.log(error);
+        }
+    },
+    showActorAgain: async function(req, res) {
+        try {
+            const actors = await Actor.findByPk(req.params.id, {include: ["peliculas"]});
+            res.render('actor_detail', {actors})
         } catch(error) {
             console.log(error);
         }
@@ -69,7 +87,9 @@ let moviesController = {
     findMovie: async function(req, res) {
         let id = req.params.id
         try {
-            const search = await Movie.findByPk(id)
+            const search = await Movie.findByPk(id, {
+                include: ["Genre", "actores"]
+            })
             res.render('list', {list: search})
         } catch(error) {
             console.log(error);
@@ -116,26 +136,31 @@ let moviesController = {
             console.log();
         }
     },
-    add: function(req, res) {
-        res.render('add');
+    add: async function(req, res) {
+        const generos =  await Genre.findAll();
+        const actores = await Actor.findAll();
+        res.render('add', {generos:generos, actores:actores});
     },
-    addMovie: function(req, res) {
-        Movie.create({
+    addMovie: async function(req, res) {
+        const newMovie = await Movie.create({
             title: req.body.titulo,
             rating: req.body.rating,
             awards: req.body.awards,
             release_date: req.body.release,
             length: req.body.length
-        });
-        res.redirect('/movies')
+        })
+        await newMovie.addActores(req.body.actores);
+        res.redirect('/');
     },
-    edit: function(req, res) {
-        Movie.findByPk(req.params.id)
-            .then(function(pelicula){
-                res.render("edit", {pelicula: pelicula});
-            })
+    edit:  function(req, res) {
+        const generos =  Genre.findAll();
+        const actores =  Actor.findAll();  
+        const pelicula =  Movie.findByPk(req.params.id, {
+            include:['Genre', 'actores']
+        })
+        res.render("edit", {pelicula: pelicula, generos: generos, actores: actores});
     },
-    editMovie: function(req, res) {
+    editMovie: async function(req, res) {
         Movie.update({
             title: req.body.titulo,
             rating: req.body.rating,
@@ -150,8 +175,8 @@ let moviesController = {
 
         res.redirect("/movies/detail/" + req.params.id);
     },
-    deleteMovie: function(req, res) {
-        Movie.destroy({
+    deleteMovie: async function(req, res) {
+        await Movie.destroy({
             where: {
                 id: req.params.id
             }

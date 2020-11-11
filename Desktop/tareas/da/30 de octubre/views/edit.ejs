@@ -13,6 +13,12 @@
         Premios: <input type="number" name="awards" id="" value="<%= pelicula.awards %>"> <br>
         Fecha de estreno: <input type="date" name="release" id="" value="<%= pelicula.release_date %>"> <br>
         Duración: <input type="number" name="length" id="" value="<%= pelicula.length %>"> <br>
+        <% generos.forEach(genero => { %>
+            <% if (pelicula.GenreId === genero.id) { %>
+            <option value="<%= genero.id %>" selected> <%= genero.name %></option>
+        <% } else { %>
+            <option value="<%= genero.id %>"> <%= genero.name %></option>
+        <% }) %>
         <button type="submit">Submit</button>
     </form>
 </body>

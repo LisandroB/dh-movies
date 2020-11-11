@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <ul>
+      <a href="/movies"> Volver al listado.</a> <br>
+      <li>Nombre: <%= actors.first_name %> <%=actors.last_name%></li>
+      <li>ranking: <%= actors.rating %></li>
+      Peliculas en las que actuó: <br> 
+      <% actors.peliculas.forEach(pelicula => { %>
+        <li><a href="/movies/detail/<%=pelicula.id%>"><%= pelicula.title %></li></a>
+      <% }); %>
+  </body>
+</html>

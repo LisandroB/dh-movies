@@ -7,5 +7,6 @@ module.exports= (sequelize, dataType) => {
     }, {
         timestamps: false
     })
+    
     return migration;
 }

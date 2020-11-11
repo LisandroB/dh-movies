@@ -3,9 +3,9 @@
   <head>
   </head>
   <body>
+    <a href="/movies"><p>Volver al listado</p></a>
     <% newMovies.forEach(movie => { %>
-      
-      <p><%= movie.title %></p>
+      <a href="/movies/detail/<%= movie.id%>"><p><%= movie.title %></p></a>
       <p><%= movie.release_date %></p>
     <% }); %>
   </body>

@@ -8,5 +8,11 @@ module.exports = (sequelize, dataTypes) => {
     }, {
         timestamps: false
     })
+    actor.associate = (models => {
+        actor.belongsToMany(models.Movie, {
+            as: 'peliculas',
+            through: 'actor_movie'
+        });
+    })
     return actor;
 }

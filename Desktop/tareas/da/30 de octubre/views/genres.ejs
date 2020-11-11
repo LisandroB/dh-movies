@@ -6,7 +6,7 @@
     <a href="/movies">Volver al listado</a>
     <li><% genres.forEach(genre => { %>
     <ul>
-        <%= genre.name %>
+        <a href="/genres/<%= genre.id %>"><%= genre.name %></a>
         <% }); %>
       </ul>
     </li>

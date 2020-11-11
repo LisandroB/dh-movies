@@ -8,5 +8,8 @@ module.exports= (sequelize, dataType) => {
     }, {
         timestamps: false
     })
+    genre.associate = (models => {
+        genre.hasMany(models.Movie);
+    })
     return genre;
 }
