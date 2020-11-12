@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
   <head>
-  </head>
+    <link rel="stylesheet" href="../stylesheets/style.css">  </head>
   <body>
-    <ul>
-      <%if (typeof result == "undefined") { %>
-        <p>No se encontró nada.</p>
-      <% } else { %>
-        <% result.forEach(movie => { %>
-          <a href="detail/<%= movie.id %>"><%= movie.title %></a> <br>
-        <% }) %>
-        <% }; %>
-      </ul>
+    <div class="todo">
+      <ul>
+        Resultados: <br>
+        <%if (typeof result == "undefined") { %>
+          <p>No se encontró nada.</p>
+        <% } else { %>
+          <% result.forEach(movie => { %>
+            <a href="detail/<%= movie.id %>"><%= movie.title %></a> <br>
+          <% }) %>
+          <% }; %>
+        </ul>
+      </div>
   </body>
 </html>

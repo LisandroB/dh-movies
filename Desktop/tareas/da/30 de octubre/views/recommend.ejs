@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-  </head>
+    <link rel="stylesheet" href="../stylesheets/style.css">  </head>
   <body>
     <a href="/movies">Volver al listado</a>
-    <% recommend.forEach(movie => { %>
-      
-      <a href="/movies/detail/<%=movie.id %>"><p><%= movie.title %></p></a>
-      <p><%= movie.rating %></p>
-    <% }); %>
+    <div class="todo">
+      <div class="moviee">
+        <% recommend.forEach(movie => { %>
+          <p>Pelis recomendadas</p> 
+          <a href="/movies/detail/<%=movie.id %>"><p><%= movie.title %></p></a>
+          <p><%= movie.rating %></p>
+        <% }); %>
+      </div>
+  </div>
   </body>
 </html>

@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
-  </head>
+    <link rel="stylesheet" href="../stylesheets/style.css">  </head>
   <body>
-    <ul>
-      <a href="/movies">Volver al listado</a> <br>
+    <a href="/movies">Volver al listado</a> <br>
+    <div class="todo">
+      <li>
         <%actors.forEach(actor => { %>
-          <a href="/actors/<%=actor.id%>"><%= actor.first_name %> <%= actor.last_name %> </a><br>
-        <% }); %>
-      </ul>
+            <ul>
+            <a href="/actors/<%=actor.id%>"><%= actor.first_name %> <%= actor.last_name %> </a><br>
+          </ul>
+          <% }); %>
+        </li>
+      </div>
   </body>
 </html>

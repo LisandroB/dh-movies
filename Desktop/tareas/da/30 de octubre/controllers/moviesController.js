@@ -148,7 +148,8 @@ let moviesController = {
             rating: req.body.rating,
             awards: req.body.awards,
             release_date: req.body.release,
-            length: req.body.length
+            length: req.body.length,
+            genre_id: req.body.genre_id
         })
         await newMovie.addActores(req.body.actores);
         res.redirect('/');

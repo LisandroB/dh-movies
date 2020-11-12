@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>add mobi</title>
+    <link rel="stylesheet" href="../stylesheets/style.css">    <title>add mobi</title>
 </head>
+<a href="/movies"> Volver al listado.</a>
 <body>
-    <a href="/movies"> Volver al listado.</a>
-    <form action="/movies/add" method="post">
-        Nombre de la peli: <input type="text" name="titulo" id=""> <br>
-        Rating: <input type="number" name="rating" id=""> <br>
-        Premios: <input type="number" name="awards" id=""> <br>
-        Fecha de estreno: <input type="date" name="release" id=""> <br>
-        Duración: <input type="number" name="length" id=""> <br>
-        Genero: <select name="genre_id" id="">
-            <% generos.forEach(genero => { %>
-                <option value="<%=genero.id%>"> <%= genero.name %> </option> <br>
-            <% }); %>
-            </select><br>
-            Actores: <select name="actores" id="" multiple>
-                <% actores.forEach(actor => { %>
-                    <option value="<%= actor.id %>"> <%= actor.first_name %> <%= actor.last_name %> </option> <br>
+    <div class="movies">
+        <form action="/movies/add" method="post">
+            Nombre de la peli: <input type="text" name="titulo" id=""> <br>
+            Rating: <input type="number" name="rating" id=""> <br>
+            Premios: <input type="number" name="awards" id=""> <br>
+            Fecha de estreno: <input type="date" name="release" id=""> <br>
+            Duración: <input type="number" name="length" id=""> <br>
+            Genero: <br> <select name="genre_id" id=""> <br>
+                <% generos.forEach(genero => { %>
+                    <option value="<%=genero.id%>"> <%= genero.name %> </option> <br>
                 <% }); %>
-            </select><br>
-        <button type="submit">Submit</button>
+                </select><br>
+                Actores: <select name="actores" id="" multiple>
+                    <% actores.forEach(actor => { %>
+                        <option value="<%= actor.id %>"> <%= actor.first_name %> <%= actor.last_name %> </option> <br>
+                    <% }); %>
+                </select><br>
+            <button type="submit">Submit</button>
+        </div>
 </form>
 </body>
 </html>

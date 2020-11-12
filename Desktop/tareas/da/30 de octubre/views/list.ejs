@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-  </head>
+    <link rel="stylesheet" href="/stylesheets/style.css">  </head>
   <body>
+    <a href="/movies"> Volver al listado.</a> <br>
+  <div class="todo">
     <ul>
-      <a href="/movies"> Volver al listado.</a> <br>
       <li>Título: <%= list.title %></li>
       <li>Rating: <%= list.rating %></li>
       <li>Premios: <%= list.awards %></li>
       <li>Fecha de lanzamiento: <%= list.release_date %></li>
       <li>Duración: <%= list.length %></li>
-      <li>Genero: <a href="/genres/<%=list.Genre.id %>"><%= list.Genre.name %></a></li>
+      <li>Genero: <a href="/genres/<%=list.GenreId %>"><%= list.Genre.name %></a></li>
       <li>Actores: <br><% list.actores.forEach(actor => { %>
         <a href="/actors/<%=actor.id%>"><%= actor.first_name %> <%= actor.last_name%> <br></a>
       <% });%> </li>
       </ul>
-      <form action="/movies/delete/<%= list.id %>?_method=DELETE" method="post">
-        <button type="submit">BORRAR</button>
-      </form>
-      <a href="/movies/edit/<%= list.id %>"><button type="submit">MODIFICAR</button></a>
+      <div class="botones">
+        <form action="/movies/delete/<%= list.id %>?_method=DELETE" method="post">
+          <button type="submit">BORRAR</button>
+        </form>
+        <a href="/movies/edit/<%= list.id %>"><button type="submit">MODIFICAR</button></a>
+      </div>
+    </div>
   </body>
 </html>

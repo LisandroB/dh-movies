@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-  </head>
+    <link rel="stylesheet" href="../stylesheets/style.css">  </head>
   <body>
     <a href="/movies">Volver al listado</a>
-    <li><% series.forEach(serie => { %>
-    <ul>
-        <%= serie.title %>
+    <div class="todo">
+      <li><% series.forEach(serie => { %>
+      <ul>
+          <%= serie.title %>
+        </ul>
         <% }); %>
-      </ul>
-    </li>
+      </li>
+    </div>
   </body>
 </html>

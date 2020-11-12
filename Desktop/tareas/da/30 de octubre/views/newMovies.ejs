@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-  </head>
+    <link rel="stylesheet" href="../stylesheets/style.css">  </head>
   <body>
     <a href="/movies"><p>Volver al listado</p></a>
-    <% newMovies.forEach(movie => { %>
-      <a href="/movies/detail/<%= movie.id%>"><p><%= movie.title %></p></a>
-      <p><%= movie.release_date %></p>
-    <% }); %>
+    <div class="todo">
+      <div class="moviee">
+        <p>Nuevos estrenos</p> 
+        <% newMovies.forEach(movie => { %>
+          <a href="/movies/detail/<%= movie.id%>"><p><%= movie.title %></p></a>
+          <p><%= movie.release_date %></p>
+        <% }); %>
+      </div>
+  </div>
   </body>
 </html>

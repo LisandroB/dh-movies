@@ -2,20 +2,24 @@
 <html>
   <head>
   </head>
-  <body>
+  <link rel="stylesheet" href="../stylesheets/style.css">  <body>
     <ul>
-      <a href="/movies"> Volver al listado.</a> <br>
-      <li>Título: <%= specificGenre.name %></li>
-      <li>ranking: <%= specificGenre.ranking %></li>
-      <li>Activo: <%= specificGenre.active %></li>
-        Pelis de este género en nuestra base de datos: <br>
-      <li>
-        <% movies.forEach(movie => { %>
-          <% if (movie.GenreId == specificGenre.id) { %>
-            <a href="/movies/detail/<%= movie.id %>"><%= movie.title %> <br></a>
-          <% } %>
-        <% }); %>
-      </li>
-      </li>
+      <div class="todo">
+        <div class="ee">
+          <a href="/movies"> Volver al listado.</a> <br>
+          <li>Título: <%= specificGenre.name %></li>
+          <li>ranking: <%= specificGenre.ranking %></li>
+          <li>Activo: <%= specificGenre.active %></li>
+            Pelis de este género en nuestra base de datos: <br>
+          <li>
+            <% movies.forEach(movie => { %>
+              <% if (movie.GenreId == specificGenre.id) { %>
+                <a href="/movies/detail/<%= movie.id %>"><%= movie.title %> <br></a>
+              <% } %>
+            <% }); %>
+          </li>
+          </li>
+        </div>
+      </div>
   </body>
 </html>
