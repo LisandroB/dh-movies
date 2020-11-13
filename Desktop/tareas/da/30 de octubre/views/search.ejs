@@ -8,6 +8,18 @@
       <div class="buscar">
         <form action="/movies/search" method="post">
           <input type="search" name="buscar" id="" placeholder="Buscar...">
+          <select name="asc_desc" id="">
+            <option value="ASC">Ascendiente!</option>
+            <option value="DESC">Descendiente!</option>
+          </select>
+          <select name="orden" id="">
+            <option value="title">Titulo</option>
+            <option value="rating">Rating</option>
+            <option value="awards">Premios</option>
+            <option value="genre">Género</option>
+            <option value="length">Duración</option>
+            <option value="release_date">Fecha de Estreno</option>
+          </select>
       </form>
     </div>
   </div>

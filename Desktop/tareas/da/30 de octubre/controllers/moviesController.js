@@ -130,9 +130,12 @@ let moviesController = {
             let result = await Movie.findAll({
                 where: {
                     title: {[Op.like]: '%' + buscar + '%'}, 
-                }
+                },
+                order: [
+                    [req.body.orden, req.body.asc_desc]
+                ]
             })
-            res.render('searchResult', {result: result});
+            res.render(await 'searchResult', {result: result});
         } catch(error) {
             console.log();
         }
