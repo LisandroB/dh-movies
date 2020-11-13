@@ -1,4 +1,4 @@
-let {Movie, Genre, Episode, Actor, Migration, Season, User, Serie, sequelize, db} = require('../database/models')
+let {Movie, Genre, Episode, Actor, Migration, Season, User, Serie, Actor_movie, sequelize, db} = require('../database/models')
 const {Op} = require("sequelize");
 let moviesController = {
     all: async function(req, res) {
@@ -179,12 +179,29 @@ let moviesController = {
         res.redirect("/movies/detail/" + req.params.id);
     },
     deleteMovie: async function(req, res) {
+        const peliEncontrada = await Movie.findByPk(req.params.id, {
+            include: ["actores"]
+        })
+        peliEncontrada.removeActores(peliEncontrada.actores)
         await Movie.destroy({
             where: {
                 id: req.params.id
             }
         })
         res.redirect("/movies");
+    },
+    associate: async function(req, res) {
+        const pelii = await Movie.findByPk(req.params.id);
+        const actorii = await Actor.findAll();
+        res.render('associateActor', {pelii, actorii});
+    },
+    associateMovie: async function(req, res) {
+        const id = req.params.id;
+        const peliculaEncontrada = await Movie.findByPk(id, {
+            include:["actores"]
+        })
+            peliculaEncontrada.addActores(req.body.actor_id);
+        res.redirect('/movies/detail/' + id);
     },
     redirect: function(req, res) {
         res.redirect('/movies')

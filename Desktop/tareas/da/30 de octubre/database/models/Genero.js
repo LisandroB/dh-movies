@@ -6,7 +6,8 @@ module.exports= (sequelize, dataType) => {
         ranking: dataType.INTEGER,
         active: dataType.INTEGER
     }, {
-        timestamps: false
+        timestamps: false,
+        paranoid: true
     })
     genre.associate = (models => {
         genre.hasMany(models.Movie);

@@ -3,6 +3,7 @@
   <head>
     <link rel="stylesheet" href="../stylesheets/style.css">  </head>
   <body>
+    <a href="/movies">Volver al listado</a>
     <div class="todo">
       <ul>
         Resultados: <br>
@@ -10,7 +11,7 @@
           <p>No se encontró nada.</p>
         <% } else { %>
           <% result.forEach(movie => { %>
-            <a href="detail/<%= movie.id %>"><%= movie.title %></a> <br>
+            <a href="detail/<%= movie.id %>"><%= movie.title %></a> <br>  
           <% }) %>
           <% }; %>
         </ul>

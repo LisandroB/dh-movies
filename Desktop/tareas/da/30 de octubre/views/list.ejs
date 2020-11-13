@@ -11,15 +11,25 @@
       <li>Premios: <%= list.awards %></li>
       <li>Fecha de lanzamiento: <%= list.release_date %></li>
       <li>Duración: <%= list.length %></li>
-      <li>Genero: <a href="/genres/<%=list.GenreId %>"><%= list.Genre.name %></a></li>
-      <li>Actores: <br><% list.actores.forEach(actor => { %>
-        <a href="/actors/<%=actor.id%>"><%= actor.first_name %> <%= actor.last_name%> <br></a>
-      <% });%> </li>
+      Genero: 
+      <%if (list.Genre != null) { %>
+        <li><a href="/genres/<%=list.GenreId %>"><%= list.Genre.name %></a></li>
+      <% } else { %>
+        <p>No se encontró el género de esta película.</p>
+      <% } %>
+      <%if (list.actores != null) { %>
+        <li>Actores: <br><% list.actores.forEach(actor => { %>
+          <a href="/actors/<%=actor.id%>"><%= actor.first_name %> <%= actor.last_name%> <br></a>
+        <% });%> </li>
+      <% } else { %>
+        <p>No se encontraron actores.</p>
+        <% } %>
       </ul>
       <div class="botones">
         <form action="/movies/delete/<%= list.id %>?_method=DELETE" method="post">
           <button type="submit">BORRAR</button>
         </form>
+        <a href="/movies/edit/<%= list.id %>/associate"><button type="submit">AGREGAR ACTOR</button></a>
         <a href="/movies/edit/<%= list.id %>"><button type="submit">MODIFICAR</button></a>
       </div>
     </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../stylesheets/style.css"> 
+    <link rel="stylesheet" href="../../stylesheets/style.css"> 
     <title>edit mobi</title>
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="movies">
             <form action="/movies/edit/<%= pelicula.id %>?_method=PUT" method="post">
                 Nombre de la peli: <input type="text" name="titulo" id="" value="<%= pelicula.title %>"> <br>
-                Rating: <input type="number" name="rating" id="" value="<%= pelicula.rating %>"> <br>
+                Rating: <input type="text" name="rating" id="" value="<%= pelicula.rating %>"> <br>
                 Premios: <input type="number" name="awards" id="" value="<%= pelicula.awards %>"> <br>
                 Fecha de estreno: <input type="date" name="release" id="" value="<%= pelicula.release_date %>"> <br>
                 Duración: <input type="number" name="length" id="" value="<%= pelicula.length %>"> <br>

@@ -6,8 +6,8 @@
     <a href="/movies">Volver al listado</a>
     <div class="todo">
       <div class="moviee">
+        <p>Pelis recomendadas</p> 
         <% recommend.forEach(movie => { %>
-          <p>Pelis recomendadas</p> 
           <a href="/movies/detail/<%=movie.id %>"><p><%= movie.title %></p></a>
           <p><%= movie.rating %></p>
         <% }); %>

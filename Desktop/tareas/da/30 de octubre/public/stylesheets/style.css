@@ -76,3 +76,7 @@ ul:hover {
 .ee {
   padding: 50px;
 }
+
+body {
+  background-color: rgb(161, 185, 185);
+}

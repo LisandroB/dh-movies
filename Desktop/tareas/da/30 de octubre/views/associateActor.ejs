@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../stylesheets/style.css"> 
+    <title>edit mobi</title>
+</head>
+<body>
+    <a href="/movies"> Volver al listado.</a>
+    <div class="todo">
+        <div class="movies">
+            <form action="/movies/edit/<%= pelii.id%>/associate?_method=PUT" method="POST">
+            Elige un actor:
+            <select name="actor_id" id="">
+                <% actorii.forEach(actori => { %>
+                    <option value="<%= actori.id %>" > <%= actori.first_name%> <%= actori.last_name%></option>
+                <% }) %>
+            </select>
+                <button type="submit">Agregar</button>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
