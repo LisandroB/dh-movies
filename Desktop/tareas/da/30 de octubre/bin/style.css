@@ -1,0 +1,82 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  a {
+    color: black;
+  }
+  
+  ul:hover {
+    background-color: #b1aead;
+      -webkit-transition: background-color 200ms linear;
+      -ms-transition: background-color 200ms linear;
+      transition: background-color 200ms linear;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-flow: row;
+    width: 225px;
+  }
+  
+  .movies {
+    background-color: rgb(218, 205, 205);
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 30px;
+    border-radius: 2.5%;
+    border-color: black;
+    width: 170px;
+  }
+  
+  .todo {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(218, 205, 205);
+    width: 538px;
+    border-radius: 2.5%;
+  }
+  
+  .logo {
+    width: 100px;
+    float: left;
+  }
+  
+  .logo img {
+    width: 300px;
+    position: absolute;
+    float: left;
+    left: 170px;
+    top: 20px;
+  }
+  
+  .pelis {
+    font-style: oblique;
+    border-style: solid;
+    border-color: rgb(151, 148, 148);
+    border-top: 5px;
+  }
+  
+  .botones {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin-right: 17px;
+  }
+  
+  .buscar {
+    padding: 27px;
+  }
+  
+  .ee {
+    padding: 50px;
+  }
+  
+  body {
+    background-color: rgb(161, 185, 185);
+  }

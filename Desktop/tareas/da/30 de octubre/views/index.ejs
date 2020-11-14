@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="./stylesheets/style.css">  </head>
+  <%- include('./partials/head') %>
   <body>
     <div class="todo">
-      <nav class="navbar">
-        <li>
-          <ul><a href="/genres">Géneros</a> <br></ul>
-          <ul><a href="/actors">Actores</a> <br></ul>
-          <ul><a href="/series">Series</a> <br></ul>
-          <ul><a href="/movies/new">Nuevos estrenos</a> <br></ul>
-          <ul><a href="/movies/recommended">Pelis recomendadas</a> <br></ul>
-          <ul><a href="/movies/search">Buscar</a> <br></ul>
-          <ul><a href="/movies/add"> Agregar peliculas</a></ul>
-        </li>
-                <div class="logo">
-                  <img src="https://fontmeme.com/temporary/613a3c53d2ae8d2571ea17eecba5332a.png" alt="">
-                </div>
-      </nav>
-      <li><% movies.forEach(movie => { %>
-        <a href="movies/detail/<%= movie.id %>"><ul class="pelis">
-          <%= movie.title %>
-        </ul></a>
-          <% }); %>
+      <%- include('./partials/header') %>
+      <div class="pelis">
+      <li>
+        <% movies.forEach(movie => { %>
+        <div class="peli">
+          <a href="movies/detail/<%= movie.id %>"><ul class="pelis">
+            <%= movie.title %>
+          </ul></a>
+        </div>
+        <% }); %>
+      </div>
+        <script src="../javascripts/front.js">
+
+        </script>
       </li>
     </div>
   </body>

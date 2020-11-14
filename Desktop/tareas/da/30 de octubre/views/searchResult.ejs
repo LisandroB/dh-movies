@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="../stylesheets/style.css">  </head>
-  <body>
-    <a href="/movies">Volver al listado</a>
+    <%- include('./partials/head') %>
+    <body>
+      <%- include('./partials/header') %>
     <div class="todo">
-      <ul>
-        Resultados: <br>
-        <%if (typeof result == "undefined") { %>
-          <p>No se encontró nada.</p>
-        <% } else { %>
-          <% result.forEach(movie => { %>
-            <a href="detail/<%= movie.id %>"><%= movie.title %></a> <br>  
-          <% }) %>
-          <% }; %>
-        </ul>
+      <div class="pelis">
+        <ul>
+          Resultados: <br>
+          <%if (typeof result == "undefined") { %>
+            <p>No se encontró nada.</p>
+          <% } else { %>
+            <% result.forEach(movie => { %>
+              <a href="detail/<%= movie.id %>"><%= movie.title %></a> <br>  
+            <% }) %>
+            <% }; %>
+          </ul>
+        </div>
       </div>
   </body>
 </html>

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="../stylesheets/style.css">  </head>
-  <body>
-    <a href="/movies">Volver al listado</a>
+    <%- include('./partials/head') %>
+    <body>
+      <%- include('./partials/header') %>
     <div class="todo">
-      <li><% series.forEach(serie => { %>
-      <ul>
-          <%= serie.title %>
-        </ul>
-        <% }); %>
-      </li>
+      <div class="pelis">
+        <li><% series.forEach(serie => { %>
+          <ul>
+            <%= serie.title %>
+          </ul>
+          <% }); %>
+        </li>
+      </div>
     </div>
   </body>
 </html>

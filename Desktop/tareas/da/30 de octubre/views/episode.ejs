@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="../stylesheets/style.css">  </head>
+  <%- include('./partials/head') %>
   <body>
-    <a href="/movies">Volver al listado</a>
-    <ul> <% episodes.forEach(episode => { %>
-      
-      <li><%= episode.title %></li>
+    <%- include('./partials/header') %>
+    <div class="pelis">
+      <ul> <% episodes.forEach(episode => { %>
+        <li><%= episode.title %></li>
       </ul>
-    <% }); %>
+      <% }); %>  
+    </div>
   </body>
 </html>

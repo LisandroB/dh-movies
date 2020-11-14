@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="../stylesheets/style.css">  </head>
-  <body>
-    <a href="/movies">Volver al listado</a>
+    <%- include('./partials/head') %>
+    <body>
+      <%- include('./partials/header') %>
     <div class="todo">
-      <div class="buscar">
+      <div class="pelis">
         <form action="/movies/search" method="post">
-          <input type="search" name="buscar" id="" placeholder="Buscar...">
+          <input type="search" name="buscar" id="" placeholder="Buscar..."> <br>
           <select name="asc_desc" id="">
             <option value="ASC">Ascendiente!</option>
             <option value="DESC">Descendiente!</option>
-          </select>
+          </select> <br>
           <select name="orden" id="">
             <option value="title">Titulo</option>
             <option value="rating">Rating</option>
@@ -19,7 +19,8 @@
             <option value="genre">Género</option>
             <option value="length">Duración</option>
             <option value="release_date">Fecha de Estreno</option>
-          </select>
+          </select> <br>
+          <button type="submit">Buscar!</button>
       </form>
     </div>
   </div>

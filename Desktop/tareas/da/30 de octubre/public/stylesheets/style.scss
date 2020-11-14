@@ -1,0 +1,85 @@
+$header: Helvetica, sans-serif;
+$font-family: 'Rubik', sans-serif;
+
+.navbar {
+    list-style: none;
+    font-family: $header;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 30px;
+    text-align: center;
+    hr {
+    margin-right: -43px;
+    margin-bottom: 37px;
+    margin-top: 19px;
+    }
+    ul {
+        border-color: white;
+        border: 4px;
+    }
+    a {
+        color: rgb(0, 0, 0);
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.15em;
+        padding: 15px 20px;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        &:after {    
+            background: none repeat scroll 0 0 transparent;
+            bottom: 0;
+            content: "";
+            display: block;
+            height: 2px;
+            left: 50%;
+            position: absolute;
+            background: rgb(0, 0, 0);
+            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+            width: 0;
+            &:hover{
+                width: 100%; 
+                left: 0; 
+              }
+          }
+      }
+      .logo{
+        width: 400px;
+        margin-top: 6px;
+      }
+    img {
+        width: 88%;
+        margin-left: 46px;
+        display: flex;
+        flex-direction: row;
+        a:hover:after {
+            width: 0%;
+            left: 0;
+        }
+    }
+    li {
+        display: flex;
+        margin-right: 100px;
+    }
+}
+.todo {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+.pelis {
+    display: flex;
+    justify-content: center;
+    font-family: $font-family;
+    ul {
+        list-style: none;
+    }
+}
+.botones{
+    display: flex;
+    margin-top: 10px;
+    form {
+        margin-top: 10px;
+    }
+}

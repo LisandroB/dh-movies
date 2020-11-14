@@ -1,4 +1,5 @@
 let {Movie, Genre, Episode, Actor, Migration, Season, User, Serie, Actor_movie, sequelize, db} = require('../database/models')
+let moment = require('moment')
 const {Op} = require("sequelize");
 let moviesController = {
     all: async function(req, res) {
@@ -91,7 +92,8 @@ let moviesController = {
             const search = await Movie.findByPk(id, {
                 include: ["Genre", "actores"]
             })
-            res.render('list', {list: search})
+            const date = moment(search.release_date).format("MMM DO YYYY")
+            res.render('list', {list: search, date})
         } catch(error) {
             console.log(error);
         }
@@ -104,7 +106,8 @@ let moviesController = {
                 ],
                 limit: 5
             })
-            res.render('newMovies', {newMovies: newMovies});
+            const date = moment(newMovies.release_date).format("MMM DO YYYY")
+            res.render('newMovies', {newMovies: newMovies, date});
         } catch (error) {
             console.log(error);
         }
@@ -116,7 +119,8 @@ let moviesController = {
                     rating: {[Op.gte]: 8},
                 }
             })
-            res.render("recommend", {recommend: recommendedMovies});
+            const date = moment(recommendedMovies.release_date).format("MMM DO YYYY")
+            res.render("recommend", {recommend: recommendedMovies,date});
         } catch(error) {
             console.log(error);
         }
@@ -164,7 +168,8 @@ let moviesController = {
         const pelicula = await Movie.findByPk(movieId, {
             include:['Genre', 'actores']
         })
-        res.render('edit', {generos, actores, pelicula})
+        const date = moment(pelicula.release_date).format("MMM DO YYYY")
+        res.render('edit', {generos, actores, pelicula, date})
     },
     editMovie: async function(req, res) {
         const movieId = req.params.id

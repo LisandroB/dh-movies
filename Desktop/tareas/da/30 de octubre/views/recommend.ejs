@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="../stylesheets/style.css">  </head>
-  <body>
-    <a href="/movies">Volver al listado</a>
+    <%- include('./partials/head') %>
+    <body>
+      <%- include('./partials/header') %>
+      <div class="pelis">
     <div class="todo">
-      <div class="moviee">
-        <p>Pelis recomendadas</p> 
+      <p>Pelis recomendadas</p> 
         <% recommend.forEach(movie => { %>
           <a href="/movies/detail/<%=movie.id %>"><p><%= movie.title %></p></a>
           <p><%= movie.rating %></p>

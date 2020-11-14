@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="../stylesheets/style.css">  </head>
+  <%- include('./partials/head') %>
   <body>
-    <a href="/movies">Volver al listado</a>
+    <%- include('./partials/header') %>
     <div class="todo">
-      <div class="eqa">
+      <div class="pelis">
         <li><% genres.forEach(genre => { %>
         <ul>
             <a href="/genres/<%= genre.id %>"><%= genre.name %></a>

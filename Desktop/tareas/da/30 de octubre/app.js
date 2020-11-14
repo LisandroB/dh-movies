@@ -10,7 +10,7 @@ var moviesRouter = require('./routes/movies')
 var genresRouter = require('./routes/genre');
 var actorsRouter = require('./routes/actors');
 var app = express();
-
+var moment = require('moment')
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../stylesheets/style.css"> 
-    <title>edit mobi</title>
-</head>
+    <%- include('./partials/head') %>
 <body>
-    <a href="/movies"> Volver al listado.</a>
+    <%- include('./partials/header') %>
+
     <div class="todo">
-        <div class="movies">
+        <div class="pelis">
             <form action="/movies/edit/<%= pelii.id%>/associate?_method=PUT" method="POST">
             Elige un actor:
             <select name="actor_id" id="">

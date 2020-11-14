@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="../stylesheets/style.css">  </head>
-  <body>
-    <a href="/movies">Volver al listado</a>
+    <%- include('./partials/head') %>
+    <body>
+      <%- include('./partials/header') %>
     <li><% seasons.forEach(season => { %>
     <ul>
         <%= season.title %>

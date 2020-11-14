@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  </head>
-  <link rel="stylesheet" href="../stylesheets/style.css">  <body>
+  <%- include('./partials/head') %><body>
     <ul>
+      <%- include('./partials/header') %>
+      <div class="pelis">
       <div class="todo">
-        <div class="ee">
-          <a href="/movies"> Volver al listado.</a> <br>
-          <li>Título: <%= specificGenre.name %></li>
-          <li>ranking: <%= specificGenre.ranking %></li>
-          <li>Activo: <%= specificGenre.active %></li>
+          <li>Título: <%= specificGenre.name %></li> <br>
+          <li>Ranking: <%= specificGenre.ranking %></li> <br>
+          <li>Activo: <%= specificGenre.active %></li> <br>
             Pelis de este género en nuestra base de datos: <br>
-          <li>
+          <li> <br>
             <% movies.forEach(movie => { %>
               <% if (movie.GenreId == specificGenre.id) { %>
                 <a href="/movies/detail/<%= movie.id %>"><%= movie.title %> <br></a>
