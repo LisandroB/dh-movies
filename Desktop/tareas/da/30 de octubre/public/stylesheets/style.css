@@ -161,4 +161,136 @@ a:hover:after {
   width: 100%;
   left: 0;
 }
+
+.pelis form {
+  border-style: solid;
+  border-radius: 10px;
+  padding: 26px;
+  border-color: #00000014;
+  display: flex;
+  flex-direction: column;
+}
+
+.no{
+  border-style: none;
+  border-color: #ffffff14;
+}
+
+.jeje{
+  color: white;
+}
+
+.demo{
+  width:1900px;
+  height:950px;
+  font-size:5em;
+  float:left;
+  text-align:center;
+}
+
+.rainbow-bg{
+		animation: rainbow-bg 4.5s linear;
+		animation-iteration-count: infinite;
+}
+
+.rainbow{
+		animation: rainbow 4.5s linear;
+		animation-iteration-count: infinite;
+}
+
+@keyframes rainbow-bg{
+		100%,0%{
+			background-color: rgb(255,0,0);
+		}
+		8%{
+			background-color: rgb(255,127,0);
+		}
+		16%{
+			background-color: rgb(255,255,0);
+		}
+		25%{
+			background-color: rgb(127,255,0);
+		}
+		33%{
+			background-color: rgb(0,255,0);
+		}
+		41%{
+			background-color: rgb(0,255,127);
+		}
+		50%{
+			background-color: rgb(0,255,255);
+		}
+		58%{
+			background-color: rgb(0,127,255);
+		}
+		66%{
+			background-color: rgb(0,0,255);
+		}
+		75%{
+			background-color: rgb(127,0,255);
+		}
+		83%{
+			background-color: rgb(255,0,255);
+		}
+		91%{
+			background-color: rgb(255,0,127);
+		}
+}
+
+@keyframes rainbow{
+		100%,0%{
+			color: rgb(255,0,0);
+		}
+		8%{
+			color: rgb(255,127,0);
+		}
+		16%{
+			color: rgb(255,255,0);
+		}
+		25%{
+			color: rgb(127,255,0);
+		}
+		33%{
+			color: rgb(0,255,0);
+		}
+		41%{
+			color: rgb(0,255,127);
+		}
+		50%{
+			color: rgb(0,255,255);
+		}
+		58%{
+			color: rgb(0,127,255);
+		}
+		66%{
+			color: rgb(0,0,255);
+		}
+		75%{
+			color: rgb(127,0,255);
+		}
+		83%{
+			color: rgb(255,0,255);
+		}
+		91%{
+			color: rgb(255,0,127);
+		}
+}
+
+h1 {
+  float: left;
+  position: absolute;
+  font-size: 100%;
+  margin-left: 100px;
+}
+
+.esquelet {
+  float: left;
+  position: absolute;
+  margin-left: 50px;
+}
+
+.esquelet button {
+  margin-left: 223px;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -9,6 +9,7 @@ router.get('/add', moviesController.add);
 router.post('/add', moviesController.addMovie);
 router.post('/search', moviesController.searchIndex);
 router.get('/detail/:id', moviesController.findMovie);
+router.get('/paginaescondida', moviesController.paginaEscondida);
 router.get('/edit/:id/associate', moviesController.associate);
 router.put('/edit/:id/associate', moviesController.associateMovie);
 router.get('/edit/:id', moviesController.edit);

@@ -213,6 +213,9 @@ let moviesController = {
     },
     redirect: function(req, res) {
         res.redirect('/movies')
+    },
+    paginaEscondida: function(req, res) {
+        res.render('paginaescondida');
     }
 }
 
