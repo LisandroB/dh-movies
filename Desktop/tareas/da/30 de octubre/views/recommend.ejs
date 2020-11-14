@@ -10,6 +10,7 @@
         <% recommend.forEach(movie => { %>
           <a href="/movies/detail/<%=movie.id %>"><p><%= movie.title %></p></a>
           <p><%= movie.rating %></p>
+          <hr>
         <% }); %>
       </div>
   </div>

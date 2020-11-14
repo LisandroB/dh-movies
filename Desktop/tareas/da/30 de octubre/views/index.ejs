@@ -8,9 +8,10 @@
       <li>
         <% movies.forEach(movie => { %>
         <div class="peli">
-          <a href="movies/detail/<%= movie.id %>"><ul class="pelis">
+          <a href="movies/detail/<%= movie.id %>" class="test"><ul >
             <%= movie.title %>
           </ul></a>
+          <hr>
         </div>
         <% }); %>
         <a href="/movies/paginaescondida"><ul class="jeje">shhh!</ul></a>

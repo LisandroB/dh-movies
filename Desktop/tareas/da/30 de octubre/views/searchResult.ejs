@@ -12,7 +12,7 @@
             <p>No se encontró nada.</p>
           <% } else { %>
             <% result.forEach(movie => { %>
-              <a href="detail/<%= movie.id %>"><%= movie.title %></a> <br>  
+              <a href="detail/<%= movie.id %>"><%= movie.title %></a> <hr><br>  
             <% }) %>
             <% }; %>
           </ul>

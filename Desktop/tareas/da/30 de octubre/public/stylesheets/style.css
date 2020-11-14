@@ -132,7 +132,7 @@
   margin-top: 10px;
 }
 a {
-  color: rgb(0, 0, 0);
+  color: rgb(158, 158, 158);
   text-decoration: none;
   letter-spacing: 0.15em;
   display: inline-block;
@@ -147,7 +147,7 @@ a:after {
   display: block;
   height: 2px;
   left: 50%;
-  background: rgb(0, 0, 0);
+  background: rgb(153, 153, 153);
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
   
@@ -291,6 +291,29 @@ h1 {
 
 .esquelet button {
   margin-left: 223px;
+}
+
+.pelis button {
+  border-color: #00000014;
+  border-radius: 9px;
+  width: 50%;
+  margin-top: 22px;
+  margin-left: 41px;
+}
+
+.test {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative; 
+}
+
+.todo hr {
+  margin-right: -43px;
+  margin-bottom: 37px;
+  margin-top: 19px;
 }
 
 /*# sourceMappingURL=style.css.map */

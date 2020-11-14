@@ -10,6 +10,7 @@
         <% newMovies.forEach(movie => { %>
           <a href="/movies/detail/<%= movie.id%>"><p><%= movie.title %></p></a>
           <p><%= movie.release_date %></p>
+          <hr>
         <% }); %>
       </div>
   </div>

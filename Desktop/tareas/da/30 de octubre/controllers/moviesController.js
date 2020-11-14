@@ -117,7 +117,10 @@ let moviesController = {
             const recommendedMovies = await Movie.findAll({
                 where: {
                     rating: {[Op.gte]: 8},
-                }
+                },
+                order: [
+                    ['title', 'DESC']
+                ]
             })
             const date = moment(recommendedMovies.release_date).format("MMM DO YYYY")
             res.render("recommend", {recommend: recommendedMovies,date});
