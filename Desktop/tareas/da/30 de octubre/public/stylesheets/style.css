@@ -13,6 +13,10 @@
           justify-content: center;
   margin-top: 30px;
   text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
 }
 
 .navbar hr {
@@ -88,6 +92,7 @@
   display: -ms-flexbox;
   display: flex;
   margin-right: 100px;
+  background-color: white;
 }
 
 .todo {
@@ -102,6 +107,7 @@
 }
 
 .pelis {
+  margin-top: 135px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,6 +115,15 @@
       -ms-flex-pack: center;
           justify-content: center;
   font-family: "Rubik", sans-serif;
+}
+
+.pelis select {
+  border-radius: 10px;
+}
+
+.pelis a {
+  font-family: 'Quicksand', sans-serif;
+  font-style: oblique;
 }
 
 .pelis ul {
@@ -129,6 +144,11 @@
   display: flex;
 }
 
+.pelis form input {
+  border-radius: 11px;
+  border-color: #cecece;
+}
+
 .pelis form button {
   width: 50%;
   margin-left: 50px;
@@ -138,6 +158,10 @@
 
 .pelis form.no {
   border-style: none;
+}
+
+.pelis form.no button {
+  width: 100%;
 }
 
 .botones {
@@ -159,6 +183,7 @@ a {
   display: inline-block;
   padding: 15px 20px;
   position: relative;
+  font-family: "Rubik", sans-serif;
 }
 
 a:after {
@@ -377,5 +402,14 @@ h1 {
   91% {
     color: #ff007f;
   }
+}
+
+.unico {
+  margin-left: 0px;
+  margin-top: -5px;
+  background-color: #efeeee;
+  border-style: solid;
+  border-radius: 0px;
+  border-color: #cacaca;
 }
 /*# sourceMappingURL=style.css.map */

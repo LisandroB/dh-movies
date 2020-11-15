@@ -212,7 +212,7 @@ let moviesController = {
             include:["actores"]
         })
             peliculaEncontrada.addActores(req.body.actor_id);
-        res.redirect('/movies/detail/' + id);
+        await res.redirect('/movies/detail/' + id);
     },
     redirect: function(req, res) {
         res.redirect('/movies')

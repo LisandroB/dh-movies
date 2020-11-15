@@ -1,6 +1,6 @@
 $header: Helvetica, sans-serif;
 $font-family: 'Rubik', sans-serif;
-
+$body: 'Quicksand', sans-serif;
 .navbar {
     list-style: none;
     font-family: $header;
@@ -9,6 +9,10 @@ $font-family: 'Rubik', sans-serif;
     justify-content: center;
     margin-top: 30px;
     text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
     hr {
     margin-right: -43px;
     margin-bottom: 37px;
@@ -61,6 +65,7 @@ $font-family: 'Rubik', sans-serif;
     li {
         display: flex;
         margin-right: 100px;
+        background-color: white;
     }
 }
 .todo {
@@ -69,9 +74,17 @@ $font-family: 'Rubik', sans-serif;
     list-style: none;
 }
 .pelis {
+    margin-top: 135px;
     display: flex;
     justify-content: center;
     font-family: $font-family;
+    select {
+        border-radius: 10px;
+    }
+    a {
+        font-family: 'Quicksand', sans-serif;
+        font-style: oblique;
+    }
     ul {
         list-style: none;
     }
@@ -82,6 +95,10 @@ $font-family: 'Rubik', sans-serif;
         border-color: #80808021;
         flex-direction: column;
         display: flex;
+        input {
+            border-radius: 11px;
+            border-color: #cecece;
+        }
         button {
             width: 50%;
             margin-left: 50px;
@@ -89,7 +106,10 @@ $font-family: 'Rubik', sans-serif;
             border-radius: 6px;
         }
         &.no {
-            border-style: none;
+            border-style: none; 
+            button {
+                width: 100%;
+            }
         }
     }
 }
@@ -108,6 +128,7 @@ a {
     display: inline-block;
     padding: 15px 20px;
     position: relative;
+    font-family: $font-family;;
     &:after {
       background: none repeat scroll 0 0 transparent;
       bottom: 0;
@@ -238,4 +259,13 @@ h1 {
     91%{
         color: rgb(255,0,127);
     }
+}
+
+.unico {
+    margin-left: 0px;
+    margin-top: -5px;
+    background-color: #efeeee;
+    border-style: solid;
+    border-radius: 0px;
+    border-color: #cacaca;
 }

@@ -31,7 +31,14 @@
                       <div class="botones">
                         <a href="/movies/edit/<%= list.id %>/associate"><button type="submit">AGREGAR ACTOR</button></a>
                         <form action="/movies/delete/<%= list.id %>?_method=DELETE" method="post" class="no">
-                          <button type="submit">BORRAR</button>
+                          <button type="submit" class="unico" style=" 
+                          margin-left: 0px;
+                          margin-top: -7px;
+                          background-color: #efeeee;
+                          border-style: solid;
+                          border-radius: 0px;
+                          border-color: #cacaca;
+                      ">BORRAR</button>
                         </form>
                           <a href="/movies/edit/<%= list.id %>"><button type="submit">MODIFICAR</button></a>
                       </div>
