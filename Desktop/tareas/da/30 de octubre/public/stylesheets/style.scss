@@ -50,7 +50,7 @@ $font-family: 'Rubik', sans-serif;
       }
     img {
         width: 88%;
-        margin-left: 46px;
+        margin-left: 25px;
         display: flex;
         flex-direction: row;
         a:hover:after {
@@ -75,11 +75,167 @@ $font-family: 'Rubik', sans-serif;
     ul {
         list-style: none;
     }
+    form {
+        border-style: solid;
+        padding: 13px;
+        border-radius: 9px;
+        border-color: #80808021;
+        flex-direction: column;
+        display: flex;
+        button {
+            width: 50%;
+            margin-left: 50px;
+            background-color: white;
+            border-radius: 6px;
+        }
+        &.no {
+            border-style: none;
+        }
+    }
 }
 .botones{
     display: flex;
     margin-top: 10px;
     form {
         margin-top: 10px;
+    }
+}
+a {
+    color: rgb(0, 0, 0);
+    text-transform: none;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
+    &:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: rgb(161, 161, 161);
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+  }
+a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
+.jeje {
+    color: white;
+}
+.rainbow-bg{
+    animation: rainbow-bg 5.5s linear;
+    animation-iteration-count: infinite;
+}
+
+.rainbow{
+    animation: rainbow 5.5s linear;
+    animation-iteration-count: infinite;
+}
+.demo{
+    width:1160px;
+    height:690px;
+    font-size:5em;
+    float:left;
+    text-align:center;
+}
+
+h1 {
+    float: left;
+    position: fixed;
+    margin-left: 398px;
+    margin-top: 50px;
+}
+
+.esquelet {
+    float:left;
+    position: fixed;
+    margin-left: 287px;
+    button {
+        margin-left: 220px;
+    }
+}
+
+@keyframes rainbow-bg{
+    100%,0%{
+        background-color: rgb(255,0,0);
+    }
+    8%{
+        background-color: rgb(255,127,0);
+    }
+    16%{
+        background-color: rgb(255,255,0);
+    }
+    25%{
+        background-color: rgb(127,255,0);
+    }
+    33%{
+        background-color: rgb(0,255,0);
+    }
+    41%{
+        background-color: rgb(0,255,127);
+    }
+    50%{
+        background-color: rgb(0,255,255);
+    }
+    58%{
+        background-color: rgb(0,127,255);
+    }
+    66%{
+        background-color: rgb(0,0,255);
+    }
+    75%{
+        background-color: rgb(127,0,255);
+    }
+    83%{
+        background-color: rgb(255,0,255);
+    }
+    91%{
+        background-color: rgb(255,0,127);
+    }
+}
+
+@keyframes rainbow{
+    100%,0%{
+        color: rgb(255,0,0);
+    }
+    8%{
+        color: rgb(255,127,0);
+    }
+    16%{
+        color: rgb(255,255,0);
+    }
+    25%{
+        color: rgb(127,255,0);
+    }
+    33%{
+        color: rgb(0,255,0);
+    }
+    41%{
+        color: rgb(0,255,127);
+    }
+    50%{
+        color: rgb(0,255,255);
+    }
+    58%{
+        color: rgb(0,127,255);
+    }
+    66%{
+        color: rgb(0,0,255);
+    }
+    75%{
+        color: rgb(127,0,255);
+    }
+    83%{
+        color: rgb(255,0,255);
+    }
+    91%{
+        color: rgb(255,0,127);
     }
 }

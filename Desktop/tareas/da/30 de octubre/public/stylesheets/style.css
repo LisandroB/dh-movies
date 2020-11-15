@@ -68,7 +68,7 @@
 
 .navbar img {
   width: 88%;
-  margin-left: 23px;
+  margin-left: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -115,6 +115,31 @@
   list-style: none;
 }
 
+.pelis form {
+  border-style: solid;
+  padding: 13px;
+  border-radius: 9px;
+  border-color: #80808021;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pelis form button {
+  width: 50%;
+  margin-left: 50px;
+  background-color: white;
+  border-radius: 6px;
+}
+
+.pelis form.no {
+  border-style: none;
+}
+
 .botones {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -125,21 +150,17 @@
 .botones form {
   margin-top: 10px;
 }
-.botones {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 10px;
-}
+
 a {
-  color: rgb(158, 158, 158);
+  color: black;
+  text-transform: none;
   text-decoration: none;
   letter-spacing: 0.15em;
   display: inline-block;
   padding: 15px 20px;
   position: relative;
-  
 }
+
 a:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
@@ -147,14 +168,11 @@ a:after {
   display: block;
   height: 2px;
   left: 50%;
-  background: rgb(153, 153, 153);
+  position: absolute;
+  background: #a1a1a1;
+  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
-  
-}
-
-.pelis a {
-  font-family: 'Rubik', sans-serif;
 }
 
 a:hover:after {
@@ -162,158 +180,202 @@ a:hover:after {
   left: 0;
 }
 
-.pelis form {
-  border-style: solid;
-  border-radius: 10px;
-  padding: 26px;
-  border-color: #00000014;
-  display: flex;
-  flex-direction: column;
-}
-
-.no{
-  border-style: none;
-  border-color: #ffffff14;
-}
-
-.jeje{
+.jeje {
   color: white;
 }
 
-.demo{
-  width:1900px;
-  height:950px;
-  font-size:5em;
-  float:left;
-  text-align:center;
+.rainbow-bg {
+  -webkit-animation: rainbow-bg 5.5s linear;
+          animation: rainbow-bg 5.5s linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
-.rainbow-bg{
-		animation: rainbow-bg 4.5s linear;
-		animation-iteration-count: infinite;
+.rainbow {
+  -webkit-animation: rainbow 5.5s linear;
+          animation: rainbow 5.5s linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }
 
-.rainbow{
-		animation: rainbow 4.5s linear;
-		animation-iteration-count: infinite;
-}
-
-@keyframes rainbow-bg{
-		100%,0%{
-			background-color: rgb(255,0,0);
-		}
-		8%{
-			background-color: rgb(255,127,0);
-		}
-		16%{
-			background-color: rgb(255,255,0);
-		}
-		25%{
-			background-color: rgb(127,255,0);
-		}
-		33%{
-			background-color: rgb(0,255,0);
-		}
-		41%{
-			background-color: rgb(0,255,127);
-		}
-		50%{
-			background-color: rgb(0,255,255);
-		}
-		58%{
-			background-color: rgb(0,127,255);
-		}
-		66%{
-			background-color: rgb(0,0,255);
-		}
-		75%{
-			background-color: rgb(127,0,255);
-		}
-		83%{
-			background-color: rgb(255,0,255);
-		}
-		91%{
-			background-color: rgb(255,0,127);
-		}
-}
-
-@keyframes rainbow{
-		100%,0%{
-			color: rgb(255,0,0);
-		}
-		8%{
-			color: rgb(255,127,0);
-		}
-		16%{
-			color: rgb(255,255,0);
-		}
-		25%{
-			color: rgb(127,255,0);
-		}
-		33%{
-			color: rgb(0,255,0);
-		}
-		41%{
-			color: rgb(0,255,127);
-		}
-		50%{
-			color: rgb(0,255,255);
-		}
-		58%{
-			color: rgb(0,127,255);
-		}
-		66%{
-			color: rgb(0,0,255);
-		}
-		75%{
-			color: rgb(127,0,255);
-		}
-		83%{
-			color: rgb(255,0,255);
-		}
-		91%{
-			color: rgb(255,0,127);
-		}
+.demo {
+  width: 1160px;
+  height: 690px;
+  font-size: 5em;
+  float: left;
+  text-align: center;
 }
 
 h1 {
   float: left;
-  position: absolute;
-  font-size: 100%;
-  margin-left: 100px;
+  position: fixed;
+  margin-left: 398px;
+  margin-top: 50px;
 }
 
 .esquelet {
   float: left;
-  position: absolute;
-  margin-left: 50px;
+  position: fixed;
+  margin-left: 287px;
 }
 
 .esquelet button {
-  margin-left: 223px;
+  margin-left: 220px;
 }
 
-.pelis button {
-  border-color: #00000014;
-  border-radius: 9px;
-  width: 50%;
-  margin-top: 22px;
-  margin-left: 41px;
+@-webkit-keyframes rainbow-bg {
+  100%, 0% {
+    background-color: red;
+  }
+  8% {
+    background-color: #ff7f00;
+  }
+  16% {
+    background-color: yellow;
+  }
+  25% {
+    background-color: chartreuse;
+  }
+  33% {
+    background-color: lime;
+  }
+  41% {
+    background-color: springgreen;
+  }
+  50% {
+    background-color: cyan;
+  }
+  58% {
+    background-color: #007fff;
+  }
+  66% {
+    background-color: blue;
+  }
+  75% {
+    background-color: #7f00ff;
+  }
+  83% {
+    background-color: magenta;
+  }
+  91% {
+    background-color: #ff007f;
+  }
 }
 
-.test {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-  letter-spacing: 0.15em;
-  display: inline-block;
-  padding: 15px 20px;
-  position: relative; 
+@keyframes rainbow-bg {
+  100%, 0% {
+    background-color: red;
+  }
+  8% {
+    background-color: #ff7f00;
+  }
+  16% {
+    background-color: yellow;
+  }
+  25% {
+    background-color: chartreuse;
+  }
+  33% {
+    background-color: lime;
+  }
+  41% {
+    background-color: springgreen;
+  }
+  50% {
+    background-color: cyan;
+  }
+  58% {
+    background-color: #007fff;
+  }
+  66% {
+    background-color: blue;
+  }
+  75% {
+    background-color: #7f00ff;
+  }
+  83% {
+    background-color: magenta;
+  }
+  91% {
+    background-color: #ff007f;
+  }
 }
 
-.todo hr {
-  margin-right: -43px;
-  margin-bottom: 37px;
-  margin-top: 19px;
+@-webkit-keyframes rainbow {
+  100%, 0% {
+    color: red;
+  }
+  8% {
+    color: #ff7f00;
+  }
+  16% {
+    color: yellow;
+  }
+  25% {
+    color: chartreuse;
+  }
+  33% {
+    color: lime;
+  }
+  41% {
+    color: springgreen;
+  }
+  50% {
+    color: cyan;
+  }
+  58% {
+    color: #007fff;
+  }
+  66% {
+    color: blue;
+  }
+  75% {
+    color: #7f00ff;
+  }
+  83% {
+    color: magenta;
+  }
+  91% {
+    color: #ff007f;
+  }
 }
 
+@keyframes rainbow {
+  100%, 0% {
+    color: red;
+  }
+  8% {
+    color: #ff7f00;
+  }
+  16% {
+    color: yellow;
+  }
+  25% {
+    color: chartreuse;
+  }
+  33% {
+    color: lime;
+  }
+  41% {
+    color: springgreen;
+  }
+  50% {
+    color: cyan;
+  }
+  58% {
+    color: #007fff;
+  }
+  66% {
+    color: blue;
+  }
+  75% {
+    color: #7f00ff;
+  }
+  83% {
+    color: magenta;
+  }
+  91% {
+    color: #ff007f;
+  }
+}
 /*# sourceMappingURL=style.css.map */
