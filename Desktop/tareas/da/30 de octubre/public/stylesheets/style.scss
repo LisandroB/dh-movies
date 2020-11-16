@@ -1,6 +1,8 @@
 $header: Helvetica, sans-serif;
 $font-family: 'Rubik', sans-serif;
 $body: 'Quicksand', sans-serif;
+$color: #0cf;
+
 .navbar {
     list-style: none;
     font-family: $header;
@@ -178,8 +180,11 @@ h1 {
     float:left;
     position: fixed;
     margin-left: 287px;
+    img {
+        margin-left: -343px;
+    }
     button {
-        margin-left: 220px;
+        margin-left: 155px;
     }
 }
 
@@ -268,4 +273,48 @@ h1 {
     border-style: solid;
     border-radius: 0px;
     border-color: #cacaca;
+}
+
+.sinsen {
+        display: inline-block;
+        padding: .75rem 1.25rem;
+        border-radius: 10rem;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 1rem;
+        letter-spacing: .15rem;
+        transition: all .3s;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        text-decoration: none;
+        &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color;
+        border-radius: 10rem;
+        z-index: -2;
+        }
+        &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: darken($color, 15%);
+        transition: all .3s;
+        border-radius: 10rem;
+        z-index: -1;
+        }
+        &:hover {
+        color: #fff;
+        &:before {
+        width: 100%;
+        }
+        }
 }
