@@ -172,7 +172,7 @@ a:hover:after {
 h1 {
     float: left;
     position: fixed;
-    margin-left: 398px;
+    margin-left: 191px;
     margin-top: 50px;
 }
 
@@ -180,6 +180,8 @@ h1 {
     float:left;
     position: fixed;
     margin-left: 287px;
+    transition: 1s;
+    left: 0;
     img {
         margin-left: -343px;
     }
@@ -288,6 +290,7 @@ h1 {
         overflow: hidden;
         z-index: 1;
         text-decoration: none;
+        outline-style: none; 
         &:after {
         content: '';
         position: absolute;
@@ -298,6 +301,7 @@ h1 {
         background-color: $color;
         border-radius: 10rem;
         z-index: -2;
+        outline-style: none; 
         }
         &:before {
         content: '';
@@ -310,11 +314,14 @@ h1 {
         transition: all .3s;
         border-radius: 10rem;
         z-index: -1;
+        outline-style: none; 
         }
         &:hover {
         color: #fff;
+        outline-style: none; 
         &:before {
         width: 100%;
+        outline-style: none; 
         }
         }
 }

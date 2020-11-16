@@ -234,7 +234,7 @@ a:hover:after {
 h1 {
   float: left;
   position: fixed;
-  margin-left: 398px;
+  margin-left: 191px;
   margin-top: 50px;
 }
 
@@ -242,6 +242,9 @@ h1 {
   float: left;
   position: fixed;
   margin-left: 287px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  left: 0;
 }
 
 .esquelet img {
@@ -431,6 +434,7 @@ h1 {
   overflow: hidden;
   z-index: 1;
   text-decoration: none;
+  outline-style: none;
 }
 
 .sinsen:after {
@@ -443,6 +447,7 @@ h1 {
   background-color: #0cf;
   border-radius: 10rem;
   z-index: -2;
+  outline-style: none;
 }
 
 .sinsen:before {
@@ -457,13 +462,16 @@ h1 {
   transition: all .3s;
   border-radius: 10rem;
   z-index: -1;
+  outline-style: none;
 }
 
 .sinsen:hover {
   color: #fff;
+  outline-style: none;
 }
 
 .sinsen:hover:before {
   width: 100%;
+  outline-style: none;
 }
 /*# sourceMappingURL=style.css.map */
